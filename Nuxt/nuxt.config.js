@@ -1,10 +1,10 @@
-const { resolve } = require('path');
+const { resolve } = require('path')
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
-  mode: "spa",
+  mode: 'spa',
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -26,9 +26,8 @@ export default {
     ],
     script: [
       { src: 'js/jquery.min.js' },
-      { src: 'js/echarts.min.js' },
       { src: 'js/particles.min.js' },
-      { src: 'js/effect.js' },
+      { src: 'js/effect.js' }
     ]
   },
 
@@ -38,6 +37,9 @@ export default {
     '~assets/scss/app.scss'
   ],
 
+  buildModules: [
+    '@nuxtjs/composition-api/module'
+  ],
   // buildModules: [
   //   '@nuxtjs/style-resources'
   // ],
@@ -64,12 +66,12 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
+    'bootstrap-vue/nuxt'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   router: {
-    mode: "hash"
+    mode: 'hash'
   },
   build: {
     extend (config, { isDev, isClient }) {
@@ -77,7 +79,7 @@ export default {
         // relative links, please.
         config.output.publicPath = './_nuxt/'
       }
-      return config;
+      return config
     }
-  },
+  }
 }
