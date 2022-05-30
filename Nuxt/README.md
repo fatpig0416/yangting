@@ -1,0 +1,3 @@
+- install node
+- npm install -g yarn
+- yarn dev

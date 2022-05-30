@@ -1,0 +1,39 @@
+a {
+	text-decoration: none;
+}
+
+.main-container {
+	color: #28e8fa;
+	width: 100vw;
+	height: 100vh;
+	background-size: 100% 100%;
+	font-family: "Microsoft YaHei";
+	.block-btns {
+		background-size: 100% 100%;
+		background-color: transparent;
+		border: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.gradient-text {
+		display: initial;
+		background: radial-gradient(circle farthest-side at center center, #00EAFF 0%, #0076FF 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.chart-area {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.particles-js-canvas-el {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
