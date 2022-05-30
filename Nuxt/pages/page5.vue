@@ -19,7 +19,9 @@
               </div>
               <div class="block-content">
                 <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                  <div class="chart-area">
+                    <img src="~assets/img/chart-2-1.png">
+                  </div>
                   <div class="chart-title">
                     型号
                   </div>
@@ -39,8 +41,8 @@
                 责任令
               </div>
               <div class="block-content">
-                <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                <div class="chart-container chart-col justify-content-center align-items-center">
+                  <img src="~assets/img/donut-chart.png" class="donut-chart">
                   <div class="chart-title">
                     70%
                   </div>
@@ -73,7 +75,9 @@
                 </div>
                 <div class="block-content">
                   <div class="chart-container chart-col">
-                    <div class="chart-area" />
+                    <div class="chart-area d-flex flex-column align-items-center justify-content-center">
+                      <img src="~assets/img/chart-2-3.png" class="task-design">
+                    </div>
                   </div>
                   <div class="chart-container chart-col">
                     <div class="chart-area-col">
@@ -228,8 +232,8 @@
                 质量工作
               </div>
               <div class="block-content">
-                <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                <div class="chart-container chart-col justify-content-center align-items-center">
+                  <img src="~assets/img/right-top-percent-1.png" class="quality-img">
                   <div class="block-button">
                     <div class="dot red" />
                     <div class="block-button-title">
@@ -237,8 +241,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                <div class="chart-container chart-col justify-content-center align-items-center">
+                  <img src="~assets/img/right-top-percent-2.png" class="quality-img">
                   <div class="block-button">
                     <div class="dot yellow" />
                     <div class="block-button-title">
@@ -246,8 +250,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                <div class="chart-container chart-col justify-content-center align-items-center">
+                  <img src="~assets/img/right-top-percent-3.png" class="quality-img">
                   <div class="block-button">
                     <div class="dot green" />
                     <div class="block-button-title">
@@ -261,7 +265,9 @@
               <div class="block-title">
                 外场保障
               </div>
-              <div class="block-content" />
+              <div class="block-content">
+                <img src="~assets/img/chart-2-6.png" class="world-map">
+              </div>
             </div>
             <div class="block-container block-sm">
               <div class="block-title">
@@ -269,7 +275,9 @@
               </div>
               <div class="block-content">
                 <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                  <div class="chart-area">
+                    <img src="~assets/img/chart-2-7.png">
+                  </div>
                 </div>
                 <div class="chart-labels-container">
                   <div class="kind-label kind-1">
@@ -692,5 +700,20 @@ export default {
 }
 .item-value-divider.item-5 {
   background-color: #00bdda;
+}
+.task-design {
+  width: 100px;
+  height: auto;
+}
+.quality-img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 20px;
+}
+.world-map {
+  width: 90%;
+}
+.donut-chart {
+  width: 120px;
 }
 </style>
