@@ -60,11 +60,11 @@ export default {
   .model-title {
     background-image: url('~assets/img/bg-block-5.png');
     background-size: 100% 100%;
-    width: 90px;
+    width: 100px;
     height: 22x;
     text-align: center;
     color: #fff;
-    padding: 3px;
+    padding: 2px;
     font-size: 11px;
   }
 
