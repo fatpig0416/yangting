@@ -5,7 +5,7 @@
         <div class="col-2" />
         <div class="col-8 page-header pt-2">
           <h1 class="m-0 gradient-text font-weight-bold">
-            二级页面
+            能力展示
           </h1>
         </div>
         <div class="col-2" />
@@ -52,7 +52,7 @@
           <CardComponent title="人力资源">
             <div class="row">
               <div class="col">
-                <div id="chart3" class="chart-area" />
+                <img src="~assets/img/chart-0.png" style="width: 100%; margin-top: 20px;">
               </div>
             </div>
           </CardComponent>
@@ -66,7 +66,7 @@
             </div>
           </CardComponent>
 
-          <CardComponent title="AEOS+新时代武器装备质量体系">
+          <CardComponent title="AEOS+新时代武器装备质量体系" center="true">
             <div class="row d-flex align-items-center justify-content-center">
               <div class="layer17 flex-col p-3">
                 <div class="layer18 flex-col" />
@@ -133,23 +133,23 @@
           <CardComponent title="试验能力">
             <div class="row px-3">
               <div class="col-4 flex-column">
-                <div class="model-title mt-4">
+                <div class="model-title">
                   露天试车台
                 </div>
-                <div id="chart4" class="chart-area" />
+                <img src="~assets/img/chart-1.png" style="width: 90%; margin-top: 10px;">
               </div>
 
               <div class="col-4 flex-column">
-                <div class="model-title mt-4">
+                <div class="model-title ">
                   室内整机试车台
                 </div>
-                <div id="chart5" class="chart-area" />
+                <img src="~assets/img/chart-2.png" style="width: 90%; margin-top: 20px;">
               </div>
               <div class="col-4 flex-column">
-                <div class="model-title mt-4">
+                <div class="model-title ">
                   不见/系统级试验器
                 </div>
-                <div id="chart6" class="chart-area" />
+                <img src="~assets/img/chart-1.png" style="width: 90%; margin-top: 10px;">
               </div>
             </div>
           </CardComponent>
@@ -206,169 +206,6 @@ export default {
         body: true
       }
     ]
-  },
-  mounted () {
-    particlesJS('particles-js', {
-      particles: {
-        number: {
-          value: 10,
-          density: {
-            enable: true,
-            value_area: 1200
-          }
-        },
-        color: {
-          value: '#ffffff'
-        },
-        shape: {
-          type: 'circle',
-          stroke: {
-            width: 2,
-            color: '#000000'
-          },
-          polygon: {
-            nb_sides: 5
-          },
-          image: {
-            src: 'img/github.svg',
-            width: 100,
-            height: 100
-          }
-        },
-        opacity: {
-          value: 0.8,
-          random: false,
-          anim: {
-            enable: false,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 5,
-          random: true,
-          anim: {
-            enable: false,
-            speed: 40,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#ffffff',
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 6,
-          direction: 'none',
-          random: false,
-          straight: false,
-          out_mode: 'out',
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 1200
-          }
-        }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: {
-            enable: true,
-            mode: 'repulse'
-          },
-          onclick: {
-            enable: true,
-            mode: 'push'
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 400,
-            line_linked: {
-              opacity: 1
-            }
-          },
-          bubble: {
-            distance: 400,
-            size: 40,
-            duration: 2,
-            opacity: 8,
-            speed: 3
-          },
-          repulse: {
-            distance: 200
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
-          }
-        }
-      },
-      retina_detect: true,
-      config_demo: {
-        hide_card: false,
-        background_color: '#b61924',
-        background_image: '',
-        background_position: '50% 50%',
-        background_repeat: 'no-repeat',
-        background_size: 'cover'
-      }
-    })
-
-    const chart3 = echarts.init(document.getElementById('chart3'))
-    const chart4 = echarts.init(document.getElementById('chart4'))
-    const chart5 = echarts.init(document.getElementById('chart5'))
-    const chart6 = echarts.init(document.getElementById('chart6'))
-
-    const option1 = {
-      tooltip: {
-        trigger: 'item'
-      },
-      series: [
-        {
-          name: 'Access From',
-          type: 'pie',
-          radius: ['40%', '70%'],
-          avoidLabelOverlap: false,
-          label: {
-            show: false,
-            position: 'center'
-          },
-          emphasis: {
-            label: {
-              show: true,
-              fontSize: '40',
-              fontWeight: 'bold'
-            }
-          },
-          labelLine: {
-            show: false
-          },
-          data: [
-            { value: 1048, name: 'Search Engine' },
-            { value: 735, name: 'Direct' },
-            { value: 580, name: 'Email' },
-            { value: 484, name: 'Union Ads' },
-            { value: 300, name: 'Video Ads' }
-          ]
-        }
-      ]
-    }
-
-    chart3.setOption(option1)
-    chart4.setOption(option1)
-    chart5.setOption(option1)
-    chart6.setOption(option1)
   }
 }
 </script>
@@ -376,7 +213,7 @@ export default {
 <style lang="scss">
 .main-container {
   &.page-1 {
-    background-image: url('~assets/img/bg-2.jpg');
+    background-image: url('~assets/img/bg-0.png');
   }
 
   .header-container {
@@ -420,7 +257,7 @@ export default {
     }
 
     .block-btns {
-      background-image: url('~assets/img/bg-block-10.png');
+      background-image: url('~assets/img/bg-block-0.png');
       display: block;
 
       &.small-block {
