@@ -68,7 +68,7 @@
 
           <CardComponent title="AEOS+新时代武器装备质量体系">
             <div class="row d-flex align-items-center justify-content-center">
-              <div class="layer17 flex-col">
+              <div class="layer17 flex-col p-3">
                 <div class="layer18 flex-col" />
 
                 <div class="d-flex flex-row mt-2 flex-wrap justify-content-center">
@@ -109,7 +109,6 @@
                   <BtnComponent title="11.0安全︱环境︱健康" yellow="true" />
                   <BtnComponent title="12.0管理其他基础支撑" yellow="true" />
                 </div>
-
               </div>
             </div>
           </CardComponent>
@@ -125,7 +124,7 @@
                 <img src="~assets/img/model-6.png" class="w-100">
               </div>
               <div class="col-4 flex-column" style="color: #fff; font-size: 13px;">
-                <div>核心技术：5000项</div> <br/>
+                <div>核心技术：5000项</div> <br>
                 <div>关键技术：2361项</div>
               </div>
             </div>
@@ -134,28 +133,23 @@
           <CardComponent title="试验能力">
             <div class="row px-3">
               <div class="col-4 flex-column">
-                <div class="model-title">
+                <div class="model-title mt-4">
                   露天试车台
                 </div>
-                <div class="big-number orange">
-                  1
-                </div>
+                <div id="chart4" class="chart-area" />
               </div>
+
               <div class="col-4 flex-column">
-                <div class="model-title">
+                <div class="model-title mt-4">
                   室内整机试车台
                 </div>
-                <div class="big-number orange">
-                  2
-                </div>
+                <div id="chart5" class="chart-area" />
               </div>
               <div class="col-4 flex-column">
-                <div class="model-title">
+                <div class="model-title mt-4">
                   不见/系统级试验器
                 </div>
-                <div class="big-number red">
-                  3
-                </div>
+                <div id="chart6" class="chart-area" />
               </div>
             </div>
           </CardComponent>
@@ -197,65 +191,187 @@
 <script>
 
 import CardComponent from '../components/CardComponent.vue'
-import BtnComponent from '~/components/BtnComponent.vue'
 import DoughnutChart from '../components/Doughnut.vue'
+import BtnComponent from '~/components/BtnComponent.vue'
 
 export default {
   name: 'IndexPage',
+  components: {
+    BtnComponent
+  },
   head: {
     script: [
       {
         src: 'https://canvasjs.com/assets/script/canvasjs.min.js',
-        body: true,
+        body: true
       }
     ]
   },
-  components: { 
-    BtnComponent
-  },
   mounted () {
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 10,
+          density: {
+            enable: true,
+            value_area: 1200
+          }
+        },
+        color: {
+          value: '#ffffff'
+        },
+        shape: {
+          type: 'circle',
+          stroke: {
+            width: 2,
+            color: '#000000'
+          },
+          polygon: {
+            nb_sides: 5
+          },
+          image: {
+            src: 'img/github.svg',
+            width: 100,
+            height: 100
+          }
+        },
+        opacity: {
+          value: 0.8,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 5,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#ffffff',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'repulse'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3
+          },
+          repulse: {
+            distance: 200
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true,
+      config_demo: {
+        hide_card: false,
+        background_color: '#b61924',
+        background_image: '',
+        background_position: '50% 50%',
+        background_repeat: 'no-repeat',
+        background_size: 'cover'
+      }
+    })
 
+    const chart3 = echarts.init(document.getElementById('chart3'))
+    const chart4 = echarts.init(document.getElementById('chart4'))
+    const chart5 = echarts.init(document.getElementById('chart5'))
+    const chart6 = echarts.init(document.getElementById('chart6'))
+
+    const option1 = {
+      tooltip: {
+        trigger: 'item'
+      },
+      series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: '40',
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 1048, name: 'Search Engine' },
+            { value: 735, name: 'Direct' },
+            { value: 580, name: 'Email' },
+            { value: 484, name: 'Union Ads' },
+            { value: 300, name: 'Video Ads' }
+          ]
+        }
+      ]
+    }
+
+    chart3.setOption(option1)
+    chart4.setOption(option1)
+    chart5.setOption(option1)
+    chart6.setOption(option1)
   }
 }
 </script>
-  <script type="text/javascript">
-  window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-      title:{
-        text: "U.S Smartphone OS Market Share, Q3 2012",
-        fontFamily: "Impact",
-        fontWeight: "normal"
-      },
-
-      legend:{
-        verticalAlign: "bottom",
-        horizontalAlign: "center"
-      },
-      data: [
-      {
-        //startAngle: 45,
-       indexLabelFontSize: 20,
-       indexLabelFontFamily: "Garamond",
-       indexLabelFontColor: "darkgrey",
-       indexLabelLineColor: "darkgrey",
-       indexLabelPlacement: "outside",
-       type: "doughnut",
-       showInLegend: true,
-       dataPoints: [
-       {  y: 53.37, legendText:"Android 53%", indexLabel: "Android 53%" },
-       {  y: 35.0, legendText:"iOS 35%", indexLabel: "Apple iOS 35%" },
-       {  y: 7, legendText:"Blackberry 7%", indexLabel: "Blackberry 7%" },
-       {  y: 2, legendText:"Windows 2%", indexLabel: "Windows Phone 2%" },
-       {  y: 5, legendText:"Others 5%", indexLabel: "Others 5%" }
-       ]
-     }
-     ]
-   });
-
-    chart.render();
-  }
-  </script>
 
 <style lang="scss">
 .main-container {
@@ -300,6 +416,75 @@ export default {
       .col {
         background-image: url('~assets/img/bg-block-3.png');
         background-size: 100% 100%;
+      }
+    }
+
+    .block-btns {
+      background-image: url('~assets/img/bg-block-10.png');
+      display: block;
+
+      &.small-block {
+        width: 100%;
+        height: 220px;
+        font-size: 14px;
+      }
+
+      &.big-block {
+        width: 100%;
+        height: 465px;
+        margin-top: 6px;
+        font-size: 14px;
+      }
+
+      .sub-header {
+        background-image: url('~assets/img/block-header-1.png');
+        background-size: 100% 100%;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        font-weight: bold;
+        line-height: 30px;
+      }
+
+      .row {
+        height: calc(100% - 30px);
+
+        .col-2,
+        .col-4,
+        .col-5 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .model-title {
+        background-image: url('~assets/img/bg-block-5.png');
+        background-size: 100% 100%;
+        width: 100px;
+        height: 22x;
+        text-align: center;
+        color: #fff;
+        padding: 2px;
+        font-size: 11px;
+      }
+
+      .big-number {
+        font-size: 100px;
+        font-weight: bold;
+        line-height: 100px;
+
+        &.blue {
+          color: #00ffff;
+        }
+
+        &.orange {
+          color: #fe9603;
+        }
+
+        &.red {
+          color: #e75114;
+        }
       }
     }
 

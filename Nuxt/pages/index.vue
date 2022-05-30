@@ -17,7 +17,7 @@
           <img src="~assets/img/model-1.png" width="400" />
         </div>
         <div class="blocks-container d-flex justify-content-around w-100">
-          <NuxtLink class="btn btn-primary block-btns big-block" to="/page1"
+          <NuxtLink class="btn btn-primary block-btns big-block" to="/page3"
             ><span class="pb-3 gradient-text">导航1</span></NuxtLink
           >
           <div
