@@ -1,7 +1,7 @@
 <template>
-  <div class="main-container page-0 p-5" id="particles-js">
+  <div id="particles-js" class="main-container page-0 p-5">
     <div class="row h-100">
-      <div class="col-3"></div>
+      <div class="col-3" />
       <div
         class="
           col-6
@@ -14,23 +14,38 @@
         "
       >
         <div class="model-container">
-          <img src="~assets/img/model-1.png" width="400" />
+          <img src="~assets/img/model-1.png" width="400">
         </div>
         <div class="blocks-container d-flex justify-content-around w-100">
-          <NuxtLink class="btn btn-primary block-btns big-block" to="/page1"
-            ><span class="pb-3 gradient-text">导航1</span></NuxtLink
+          <NuxtLink
+            class="btn btn-primary block-btns big-block"
+            to="/page1"
           >
+            <span class="pb-3 gradient-text">导航1</span>
+          </NuxtLink>
           <div
-            v-on:mouseover="handleSecond(true)"
-            v-on:mouseleave="handleSecond(false)"
+            @mouseover="handleSecond(true)"
+            @mouseleave="handleSecond(false)"
           >
-            <NuxtLink class="btn btn-primary block-btns big-block" to="/page2"
-              ><span class="pb-3 gradient-text">导航2</span></NuxtLink
+            <NuxtLink
+              class="btn btn-primary block-btns big-block"
+              to="/page2"
             >
+              <span class="pb-3 gradient-text">导航2</span>
+            </NuxtLink>
+          </div>
+          <div>
+            <NuxtLink
+              class="btn btn-primary block-btns big-block"
+              to="/page5"
+            >
+              <span class="pb-3 gradient-text">导航3</span>
+            </NuxtLink>
           </div>
         </div>
       </div>
       <div
+        v-if="showSub"
         class="
           col-3
           h-100
@@ -41,25 +56,27 @@
           pl-0
           pb-5
         "
-        v-if="showSub"
-        v-on:mouseover="handleSub(true)"
-        v-on:mouseleave="handleSub(false)"
+        @mouseover="handleSub(true)"
+        @mouseleave="handleSub(false)"
       >
         <NuxtLink
           class="btn btn-primary block-btns small-block mb-5"
           to="/page2-1"
-          ><span class="pb-2 gradient-text">子导航1</span></NuxtLink
         >
+          <span class="pb-2 gradient-text">子导航1</span>
+        </NuxtLink>
         <NuxtLink
           class="btn btn-primary block-btns small-block mb-5"
           to="/page2-2"
-          ><span class="pb-2 gradient-text">子导航2</span></NuxtLink
         >
+          <span class="pb-2 gradient-text">子导航2</span>
+        </NuxtLink>
         <NuxtLink
           class="btn btn-primary block-btns mb-5 small-block"
           to="/page2-3"
-          ><span class="pb-2 gradient-text">子导航3</span></NuxtLink
         >
+          <span class="pb-2 gradient-text">子导航3</span>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -67,46 +84,46 @@
 
 <script>
 export default {
-  computed: {
-    showSub() {
-      return this.onSecond || this.onSub;
-    },
-  },
-  data() {
+  data () {
     return {
       onSecond: false,
-      onSub: false,
-    };
+      onSub: false
+    }
   },
-  mounted() {
+  computed: {
+    showSub () {
+      return this.onSecond || this.onSub
+    }
+  },
+  mounted () {
     particlesJS(
-      "particles-js",
+      'particles-js',
       {
         particles: {
           number: {
             value: 80,
             density: {
               enable: true,
-              value_area: 800,
-            },
+              value_area: 800
+            }
           },
           color: {
-            value: "#ffffff",
+            value: '#ffffff'
           },
           shape: {
-            type: "circle",
+            type: 'circle',
             stroke: {
               width: 0,
-              color: "#000000",
+              color: '#000000'
             },
             polygon: {
-              nb_sides: 5,
+              nb_sides: 5
             },
             image: {
-              src: "img/github.svg",
+              src: 'img/github.svg',
               width: 100,
-              height: 100,
-            },
+              height: 100
+            }
           },
           opacity: {
             value: 0.5,
@@ -115,8 +132,8 @@ export default {
               enable: false,
               speed: 1,
               opacity_min: 0.1,
-              sync: false,
-            },
+              sync: false
+            }
           },
           size: {
             value: 5,
@@ -125,97 +142,97 @@ export default {
               enable: false,
               speed: 40,
               size_min: 0.1,
-              sync: false,
-            },
+              sync: false
+            }
           },
           line_linked: {
             enable: true,
             distance: 150,
-            color: "#ffffff",
+            color: '#ffffff',
             opacity: 0.4,
-            width: 1,
+            width: 1
           },
           move: {
             enable: true,
             speed: 6,
-            direction: "none",
+            direction: 'none',
             random: false,
             straight: false,
-            out_mode: "out",
+            out_mode: 'out',
             attract: {
               enable: false,
               rotateX: 600,
-              rotateY: 1200,
-            },
-          },
+              rotateY: 1200
+            }
+          }
         },
         interactivity: {
-          detect_on: "canvas",
+          detect_on: 'canvas',
           events: {
             onhover: {
               enable: true,
-              mode: "repulse",
+              mode: 'repulse'
             },
             onclick: {
               enable: true,
-              mode: "push",
+              mode: 'push'
             },
-            resize: true,
+            resize: true
           },
           modes: {
             grab: {
               distance: 400,
               line_linked: {
-                opacity: 1,
-              },
+                opacity: 1
+              }
             },
             bubble: {
               distance: 400,
               size: 40,
               duration: 2,
               opacity: 8,
-              speed: 3,
+              speed: 3
             },
             repulse: {
-              distance: 200,
+              distance: 200
             },
             push: {
-              particles_nb: 4,
+              particles_nb: 4
             },
             remove: {
-              particles_nb: 2,
-            },
-          },
+              particles_nb: 2
+            }
+          }
         },
         retina_detect: true,
         config_demo: {
           hide_card: false,
-          background_color: "#b61924",
-          background_image: "",
-          background_position: "50% 50%",
-          background_repeat: "no-repeat",
-          background_size: "cover",
-        },
+          background_color: '#b61924',
+          background_image: '',
+          background_position: '50% 50%',
+          background_repeat: 'no-repeat',
+          background_size: 'cover'
+        }
       }
-    );
+    )
   },
   methods: {
-    handleSecond(val) {
-      if (val) this.onSecond = val;
-      else
+    handleSecond (val) {
+      if (val) { this.onSecond = val } else {
         setTimeout(() => {
-          this.onSecond = val;
-        }, 100);
+          this.onSecond = val
+        }, 100)
+      }
     },
-    handleSub(val) {
-      if (val) this.onSub = val;
-      else
+    handleSub (val) {
+      if (val) { this.onSub = val } else {
         setTimeout(() => {
-          this.onSub = val;
-        }, 100);
-    },
-  },
-};
+          this.onSub = val
+        }, 100)
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss">
