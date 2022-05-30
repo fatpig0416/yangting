@@ -69,8 +69,8 @@ export default {
 .SupportingProductionChart {
   background: transparent;
   .chart {
-    width: 330px;
-    height: 300px;
+    width: 230px;
+    height: 200px;
   }
 }
 </style>

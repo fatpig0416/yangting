@@ -1,6 +1,5 @@
 <template>
   <div class="PreresearchChartContent">
-    <div>
       <apexcharts
         class="chart"
         type="radialBar"
@@ -9,8 +8,6 @@
         :options="chartOptions"
         :series="series"
       />
-      <span class="itemText">预研</span>
-    </div>
   </div>
 </template>
 
@@ -109,14 +106,5 @@ export default {
     -ms-transform: scale(-1, 1);
     transform: scale(-1, 1);
   }
-}
-.itemText {
-  position: absolute;
-  width: 40px;
-  height: 18px;
-  color: rgba(255, 255, 255, 1);
-  font-size: 20px;
-  font-family: MicrosoftYaHei;
-  margin: 200px 0 0 95px;
 }
 </style>

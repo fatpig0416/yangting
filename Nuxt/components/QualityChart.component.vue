@@ -1,68 +1,66 @@
 <template>
   <div class="QualityChart">
-    <v-chart class="chart" :option="option" />
+    <apexcharts
+      class="chart"
+      type="radialBar"
+      width="230"
+      height="230"
+      :options="chartOptions"
+      :series="series"
+    />
   </div>
 </template>
 
 <script>
-import { use } from 'echarts/core'
-import { CanvasRenderer } from 'echarts/renderers'
-import { PieChart } from 'echarts/charts'
-import {
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent
-} from 'echarts/components'
-import VChart, { THEME_KEY } from 'vue-echarts'
-
-use([
-  CanvasRenderer,
-  PieChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent
-])
+import VueApexCharts from 'vue-apexcharts'
 
 export default {
   name: 'QualityChart',
   components: {
-    VChart
+    apexcharts: VueApexCharts
   },
-  // provide: {
-  //   [THEME_KEY]: 'dark'
-  // },
+  props: [
+    'text'
+  ],
   data () {
     return {
-      option: {
-        series: [
-          {
-            type: 'pie',
-            radius: ['60%', '70%'],
-            avoidLabelOverlap: false,
-            itemStyle: {
-              borderRadius: 10,
-              borderColor: '#fff0',
-              borderWidth: 2
-            },
-            data: [
-              { value: 26 },
-              { value: 12 }
-            ],
-            color: ['#da0051', '#33576e']
+      series: [70],
+      chartOptions: {
+        chart: {
+          id: 'PreresearchChart'
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: '70%'
+            }
           }
-        ]
+        },
+        colors: ['#d59056'],
+        labels: ['2/5']
       }
     }
+  },
+  mounted () {
+  },
+  methods: {
   }
 }
 </script>
-
 <style lang="scss">
 .QualityChart {
   background: transparent;
-  .chart {
-    width: 330px;
-    height: 300px;
-  }
+  position: relative;
+  // .chart {
+  //   background: transparent;
+  //   position: absolute;
+  //   left: 0px;
+  //   top: 0px;
+  //   -moz-transform: scale(-1, 1);
+  //   -webkit-transform: scale(-1, 1);
+  //   -o-transform: scale(-1, 1);
+  //   -ms-transform: scale(-1, 1);
+  //   transform: scale(-1, 1);
+  // }
 }
 </style>

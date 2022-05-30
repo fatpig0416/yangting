@@ -21,7 +21,7 @@
             class="btn btn-primary block-btns big-block"
             to="/page1"
           >
-            <span class="pb-3 gradient-text">导航1</span>
+            <span class="pb-3 gradient-text">能力展示</span>
           </NuxtLink>
           <div
             @mouseover="handleSecond(true)"
@@ -31,7 +31,7 @@
               class="btn btn-primary block-btns big-block"
               to="/page2"
             >
-              <span class="pb-3 gradient-text">导航2</span>
+              <span class="pb-3 gradient-text">管理中心</span>
             </NuxtLink>
           </div>
         </div>
@@ -53,27 +53,21 @@
       >
         <NuxtLink
           class="btn btn-primary block-btns small-block mb-5"
-          to="/page2-1"
+          to="/page5"
         >
-          <span class="pb-2 gradient-text">子导航1</span>
+          <span class="pb-2 gradient-text">科研管理</span>
         </NuxtLink>
         <NuxtLink
           class="btn btn-primary block-btns small-block mb-5"
           to="/page2-2"
         >
-          <span class="pb-2 gradient-text">子导航2</span>
+          <span class="pb-2 gradient-text">经营管理</span>
         </NuxtLink>
         <NuxtLink
           class="btn btn-primary block-btns mb-5 small-block"
           to="/page2-3"
         >
-          <span class="pb-2 gradient-text">子导航3</span>
-        </NuxtLink>
-        <NuxtLink
-          class="btn btn-primary block-btns mb-5 small-block"
-          to="/page3"
-        >
-          <span class="pb-2 gradient-text">子导航4</span>
+          <span class="pb-2 gradient-text">建堂文化</span>
         </NuxtLink>
       </div>
     </div>
