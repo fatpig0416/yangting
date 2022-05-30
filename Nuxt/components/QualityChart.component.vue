@@ -3,8 +3,8 @@
     <apexcharts
       class="chart"
       type="radialBar"
-      width="230"
-      height="230"
+      width="140"
+      height="140"
       :options="chartOptions"
       :series="series"
     />
@@ -19,29 +19,56 @@ export default {
   components: {
     apexcharts: VueApexCharts
   },
-  props: [
-    'text'
-  ],
+  props: {
+    label: {
+      type: String,
+      default: ''
+    },
+    color: {
+      type: String,
+      default: '#000000'
+    },
+    percent: {
+      type: Number,
+      default: 0
+    }
+  },
   data () {
     return {
       series: [70],
       chartOptions: {
         chart: {
-          id: 'PreresearchChart'
+          id: 'QualityChart'
         },
         plotOptions: {
           radialBar: {
             hollow: {
-              size: '70%'
+              size: '60%'
+            },
+            track: {
+              background: '#044c80cc'
+            },
+            dataLabels: {
+              name: {
+                show: true,
+                color: '#ffffff'
+              },
+              value: {
+                show: false,
+                color: '#ff0000'
+              }
             }
           }
         },
         colors: ['#d59056'],
-        labels: ['2/5']
+        labels: ['']
       }
     }
   },
-  mounted () {
+  created () {
+    this.chartOptions.labels = [this.label]
+    this.chartOptions.colors = [this.color]
+    this.series = [this.percent]
   },
   methods: {
   }
@@ -51,16 +78,5 @@ export default {
 .QualityChart {
   background: transparent;
   position: relative;
-  // .chart {
-  //   background: transparent;
-  //   position: absolute;
-  //   left: 0px;
-  //   top: 0px;
-  //   -moz-transform: scale(-1, 1);
-  //   -webkit-transform: scale(-1, 1);
-  //   -o-transform: scale(-1, 1);
-  //   -ms-transform: scale(-1, 1);
-  //   transform: scale(-1, 1);
-  // }
 }
 </style>

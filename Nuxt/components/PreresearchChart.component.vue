@@ -1,13 +1,13 @@
 <template>
   <div class="PreresearchChartContent">
-      <apexcharts
-        class="chart"
-        type="radialBar"
-        width="230"
-        height="230"
-        :options="chartOptions"
-        :series="series"
-      />
+    <apexcharts
+      class="chart"
+      type="radialBar"
+      width="230"
+      height="230"
+      :options="chartOptions"
+      :series="series"
+    />
   </div>
 </template>
 
@@ -19,10 +19,6 @@ export default {
   components: {
     apexcharts: VueApexCharts
   },
-  props: [
-    'width',
-    'height'
-  ],
   data () {
     return {
       series: [100, 95, 61, 90, 51],

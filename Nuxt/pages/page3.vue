@@ -2,7 +2,7 @@
   <div id="particles-js" class="main-container page-2 px-5">
     <!-- <PreresearchChartComponent/> -->
     <!-- <SupportingProductionChartComponentVue /> -->
-    <QualityChartComponentVue/>
+    <QualityChartComponentVue :label="`3/5`" :color="`#ffff00`" :percent="90" />
   </div>
 </template>
 

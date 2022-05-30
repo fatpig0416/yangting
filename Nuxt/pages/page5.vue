@@ -229,7 +229,9 @@
               </div>
               <div class="block-content">
                 <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                  <div class="chart-area">
+                    <QualityChartComponentVue :label="`3/5`" :color="`#ff0000`" :percent="60" />
+                  </div>
                   <div class="block-button">
                     <div class="dot red" />
                     <div class="block-button-title">
@@ -238,7 +240,9 @@
                   </div>
                 </div>
                 <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                  <div class="chart-area">
+                    <QualityChartComponentVue :label="`1/3`" :color="`#ffff00`" :percent="33" />
+                  </div>
                   <div class="block-button">
                     <div class="dot yellow" />
                     <div class="block-button-title">
@@ -247,7 +251,9 @@
                   </div>
                 </div>
                 <div class="chart-container chart-col">
-                  <div class="chart-area" />
+                  <div class="chart-area">
+                    <QualityChartComponentVue :label="`1/2`" :color="`#008000`" :percent="50" />
+                  </div>
                   <div class="block-button">
                     <div class="dot green" />
                     <div class="block-button-title">
