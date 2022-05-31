@@ -17,22 +17,18 @@
               <div class="block-title">
                 科研计划概况
               </div>
-              <div class="block-content">
-                <div class="chart-container chart-col">
-                  <div class="chart-area">
-                    <img src="~assets/img/chart-2-1.png">
-                  </div>
-                  <div class="chart-title">
-                    型号
-                  </div>
+              <div class="block-content position-relative pl-3">
+                <div class="chart-container chart-col d-flex justify-content-start align-items-center">
+                  <img src="~assets/img/chart-2-1.png" style="width: 130px; margin-top: 10px;">
                 </div>
                 <div class="chart-container chart-col">
                   <div class="chart-area">
                     <PreresearchChartComponent />
                   </div>
-                  <div class="chart-title">
-                    预研
-                  </div>
+                </div>
+                <div class="labels-container">
+                  <div class="chart-title label">型号</div>
+                  <div class="chart-title label">预研</div>
                 </div>
               </div>
             </div>
@@ -232,8 +228,10 @@
                 质量工作
               </div>
               <div class="block-content">
-                <div class="chart-container chart-col justify-content-center align-items-center">
-                  <img src="~assets/img/right-top-percent-1.png" class="quality-img">
+                <div class="chart-container chart-col">
+                  <div class="chart-area">
+                    <QualityChartComponentVue :label="`3/5`" :color="`#ff0000`" :percent="60" />
+                  </div>
                   <div class="block-button">
                     <div class="dot red" />
                     <div class="block-button-title">
@@ -241,8 +239,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="chart-container chart-col justify-content-center align-items-center">
-                  <img src="~assets/img/right-top-percent-2.png" class="quality-img">
+                <div class="chart-container chart-col">
+                  <div class="chart-area">
+                    <QualityChartComponentVue :label="`1/3`" :color="`#ffff00`" :percent="33" />
+                  </div>
                   <div class="block-button">
                     <div class="dot yellow" />
                     <div class="block-button-title">
@@ -250,8 +250,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="chart-container chart-col justify-content-center align-items-center">
-                  <img src="~assets/img/right-top-percent-3.png" class="quality-img">
+                <div class="chart-container chart-col">
+                  <div class="chart-area">
+                    <QualityChartComponentVue :label="`1/2`" :color="`#008000`" :percent="50" />
+                  </div>
                   <div class="block-button">
                     <div class="dot green" />
                     <div class="block-button-title">
@@ -274,10 +276,8 @@
                 经费管理
               </div>
               <div class="block-content">
-                <div class="chart-container chart-col">
-                  <div class="chart-area">
-                    <img src="~assets/img/chart-2-7.png">
-                  </div>
+                <div class="chart-container chart-col justify-content-center align-items-center">
+                  <img src="~assets/img/chart-2-7.png">
                 </div>
                 <div class="chart-labels-container">
                   <div class="kind-label kind-1">
@@ -486,6 +486,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .dot {
@@ -715,5 +716,16 @@ export default {
 }
 .donut-chart {
   width: 120px;
+}
+.labels-container {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  left: -0.25rem;
+}
+.chart-title.label {
+  flex: 1;
+  text-align: center;
 }
 </style>
